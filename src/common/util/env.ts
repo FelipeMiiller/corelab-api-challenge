@@ -11,7 +11,7 @@ function listEnvPaths() {
     .map((file) => path.join(ROOTPATH, file));
 }
 
-function loadEnvironmentConfig(): { env: NodeJS.ProcessEnv; using: string } {
+export default function loadEnvironmentConfig(): { env: NodeJS.ProcessEnv; using: string } {
   try {
     const envPaths = listEnvPaths();
     const NODE_ENV = process.env.NODE_ENV || 'development';
@@ -45,5 +45,3 @@ function loadEnvironmentConfig(): { env: NodeJS.ProcessEnv; using: string } {
     );
   }
 }
-
-export default loadEnvironmentConfig();

@@ -1,18 +1,19 @@
+import { TasksModule } from './modules/tasks/tasks.module';
+import { DatabaseModule } from './common/infra/database/database.module';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import config from './util/config';
+
+
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      ...config.database,
-      entities: [],
-      synchronize: true,
-    }),
+    TasksModule,
+    DatabaseModule,
+
   ],
-  controllers: [AppController],
+  controllers: [
+    AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
