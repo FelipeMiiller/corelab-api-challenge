@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean,IsIn, IsNotEmpty, IsString} from 'class-validator';
@@ -6,6 +7,12 @@ import { ColorsTasks } from 'src/common/constants/colorsTask';
 
 
 
+=======
+import { ApiProperty } from '@nestjs/swagger';
+import { IsBoolean, IsIn, IsNotEmpty, IsString } from 'class-validator';
+import { ColorsTasks } from 'src/common/constants/colorsTask';
+
+>>>>>>> 8192f77 (refactory: docker end database connection)
 export class CreateTasksDto {
   @ApiProperty({
     type: String,
@@ -40,6 +47,7 @@ export class CreateTasksDto {
     name: 'color',
     required: false,
     description: 'The color of the task',
+<<<<<<< HEAD
     enum: ColorsTasks
   })
   @IsString()
@@ -49,3 +57,11 @@ export class CreateTasksDto {
   
 }
 
+=======
+    enum: ColorsTasks,
+  })
+  @IsString()
+  @IsIn(ColorsTasks)
+  color: string;
+}
+>>>>>>> 8192f77 (refactory: docker end database connection)

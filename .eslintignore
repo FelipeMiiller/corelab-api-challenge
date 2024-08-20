@@ -1,3 +1,8 @@
 build
 node_modules
+<<<<<<< HEAD
 dist
+=======
+dist
+.docker
+>>>>>>> 8192f77 (refactory: docker end database connection)

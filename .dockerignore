@@ -13,4 +13,9 @@ coverage
 Dockerfile
 README.md
 .eslintrc.js
+<<<<<<< HEAD
 nodemon.json
+=======
+nodemon.json
+.docker/dev/dbdata
+>>>>>>> 8192f77 (refactory: docker end database connection)

@@ -3,7 +3,16 @@
   "rootDir": ".",
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
+<<<<<<< HEAD
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   }
+=======
+  
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleDirectories": ["<rootDir>/../", "node_modules"]
+ 
+>>>>>>> 8192f77 (refactory: docker end database connection)
 }

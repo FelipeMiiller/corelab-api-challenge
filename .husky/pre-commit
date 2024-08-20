@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 
 
 npx --no-install lint-staged
+=======
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+>>>>>>> 8192f77 (refactory: docker end database connection)
