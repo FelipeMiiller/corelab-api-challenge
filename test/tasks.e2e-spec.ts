@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
-import { TasksModule } from '../src/modules/tasks/tasks.module';
+import { TasksModule } from 'src/modules/tasks/tasks.module';
 import { AppModule } from 'src/ioC/app.module';
 
 describe('TasksController (e2e)', () => {
@@ -17,6 +17,6 @@ describe('TasksController (e2e)', () => {
   });
 
   it('should return tasks', () => {
-    return request(app.getHttpServer()).get('/tasks').expect(200);
+    return request(app.getHttpServer()).get('/tasks').expect(200).expect([]);
   });
 });

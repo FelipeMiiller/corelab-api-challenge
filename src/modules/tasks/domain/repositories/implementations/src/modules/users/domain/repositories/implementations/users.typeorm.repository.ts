@@ -1,6 +1,7 @@
 import { Inject, NotFoundException } from '@nestjs/common';
-import { Task as TaskEntity } from 'src/modules/tasks/domain/entities/tasks.entity';
-import { Task as TaskModel } from 'src/modules/tasks/domain/models/tasks.model';
+import { TaskEntity } from 'src/modules/tasks/domain/entities/tasks.entity';
+import { TaskModel } from 'src/modules/tasks/domain/models/tasks.model';
+
 import { TasksRepository } from 'src/modules/tasks/domain/repositories/tasks.repository.interface';
 import { DeepPartial, Repository } from 'typeorm';
 

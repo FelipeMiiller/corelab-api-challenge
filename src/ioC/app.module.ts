@@ -5,7 +5,6 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { CreateTasksTable1723809312769 } from 'src/migrations/1723809312769-CreateTasksTable';
 import appConfig, { pathEnv } from 'src/config/app.config';
 
-import { TaskModel } from 'src/modules/tasks/domain/models/tasks.model';
 import { TasksModule } from 'src/modules/tasks/tasks.module';
 import { DatabaseModule } from './database.module';
 import typeormConfig from 'src/config/typeorm.config';

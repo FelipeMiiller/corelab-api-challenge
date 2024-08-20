@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import { DataSource } from 'typeorm';
-import { Task } from '../models/tasks.model';
-
-export const provideTasksRepository = [
-  {
-    provide: 'TASK_REPOSITORY',
-    useFactory: (dataSource: DataSource) => dataSource.getRepository(Task),
-    inject: ['DATA_SOURCE'],
-  },
-];
-=======
 import { Repository } from 'typeorm';
 import { TaskModel } from '../models/tasks.model';
 
@@ -53,4 +41,3 @@ export class TasksRepoDependenciesProvider {
     public typeOrmRepository: Repository<TaskModel>,
   ) {}
 }
->>>>>>> 8192f77 (refactory: docker end database connection)

@@ -11,10 +11,12 @@
 # https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md
 # https://www.bretfisher.com/node-docker-good-defaults/
 # http://goldbergyoni.com/checklist-best-practice-of-node-js-in-production/
+# https://github.com/Saluki/nestjs-template/blob/master/Dockerfile
+
 
 FROM node:20-alpine as builder
 
-ENV NODE_ENV production
+ENV NODE_ENV build
 
 USER node
 WORKDIR /home/node
@@ -23,8 +25,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY --chown=node:node . .
-RUN npx prisma generate \
-    && npm run build \
+RUN  npm run build \
     && npm prune --omit=dev
 
 # ---
@@ -40,4 +41,6 @@ COPY --from=builder --chown=node:node /home/node/package*.json ./
 COPY --from=builder --chown=node:node /home/node/node_modules/ ./node_modules/
 COPY --from=builder --chown=node:node /home/node/dist/ ./dist/
 
-CMD ["node", "dist/server.js"]
+EXPOSE 3000
+
+CMD ["npm", "run", "start:prod"]

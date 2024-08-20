@@ -10,16 +10,6 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
-<<<<<<< HEAD
-=======
-    "paths": {
-      "src/*": [
-        "./src/*"
-      ]
-    },
-    "moduleResolution": "node",
-    "allowJs": true,
->>>>>>> 8192f77 (refactory: docker end database connection)
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
@@ -27,11 +17,7 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
-<<<<<<< HEAD
-  }
-}
-=======
   },
   "exclude": ["node_modules", "dist",".docker"]
 }
->>>>>>> 8192f77 (refactory: docker end database connection)
+

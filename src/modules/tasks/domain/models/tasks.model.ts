@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-
-@Entity()
-export class Task {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
-
-=======
 import { Entity, Column, PrimaryGeneratedColumn, Generated, BeforeInsert, Index } from 'typeorm';
 import { TaskEntity } from '../entities/tasks.entity';
 import { defaultIfEmpty } from 'rxjs';
@@ -27,17 +18,13 @@ export class TaskModel {
   id: string;
 
   @Index()
->>>>>>> 8192f77 (refactory: docker end database connection)
   @Column()
   title: string;
 
   @Column({ nullable: true })
   description: string;
 
-<<<<<<< HEAD
-=======
   @Index()
->>>>>>> 8192f77 (refactory: docker end database connection)
   @Column({ default: false })
   isFavorite: boolean;
 
