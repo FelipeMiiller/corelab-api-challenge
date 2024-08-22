@@ -1,25 +1,27 @@
 
 
 services: 
-
   postgres:
-    image: postgres:16.4-alpine3.20
-    user: root
+    build:
+      context: .
+      dockerfile: .docker/dev/postgres.Dockerfile
+    
     restart: always
     tty: true
+   
     ports:
       - "5432:5432"
     volumes:
-      - .docker/dev/pgdata:/var/lib/postgresql/data
+      - .docker/volumes/pgdata:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgres
-    
-    
+ 
+
 
   pgadmin:
     image: dpage/pgadmin4
-    user: root
+    
     restart: always
     tty: true
     environment:
@@ -28,6 +30,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - .docker/pgadmindata:/var/lib/pgadmin
+      - .docker/volumes/pgadmindata:/var/lib/pgadmin
     depends_on:
       - postgres
+   
