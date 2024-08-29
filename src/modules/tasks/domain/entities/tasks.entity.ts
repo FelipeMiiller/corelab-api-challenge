@@ -3,7 +3,7 @@ export class TaskEntity {
 
   readonly description?: string;
 
-  readonly isFavorite: boolean;
+  readonly isFavorite?: boolean;
 
   readonly color?: string;
 

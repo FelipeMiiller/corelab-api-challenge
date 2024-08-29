@@ -2,9 +2,9 @@
 https://docs.nestjs.com/modules
 */
 
-import { ConfigService, ConfigType } from '@nestjs/config';
-import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import databaseConfig from 'src/config/typeorm.config';
+import { ConfigService} from '@nestjs/config';
+import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { Module } from '@nestjs/common';
 
 @Module({

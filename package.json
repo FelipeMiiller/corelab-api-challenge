@@ -25,13 +25,13 @@
     "test:watch": "jest --watch --verbose",
     "test:cov": "jest --coverage",
     "test:debug": " node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": " jest --config ./test/jest-e2e.json",
-    "typeorm": "typeorm-ts-node-commonjs",
-    "premigration:run": "npm run build",
-    "migration:run": "npx typeorm migration:run -d ./dist/common/infra/database/database.providers.js",
-    "migration:generate": "npx typeorm migration:generate -d ./dist/common/infra/database/database.providers.js",
-    "migration:up": "npx typeorm migration:run -d ./dist/common/infra/database/database.providers.js",
-    "migration:down": "npx typeorm migration:revert -d ./dist/common/infra/database/database.providers.jss"
+    "test:e2e": " jest --config --watch --verbose ./test/jest-e2e.json",
+    "migration:run": "npx typeorm migration:run -d ./dist/config/typeorm.config.js",
+    "migration:generate": "npx typeorm migration:generate -d ./dist/config/typeorm.config.js",
+    "migration:up": "npx typeorm migration:run -d ./dist/config/typeorm.config.js",
+    "migration:down": "npx typeorm migration:revert -d ./dist/config/typeorm.config.js",
+    "premigration:run:test": "npm run build",
+    "migration:run:test": "NODE_ENV=test  npx typeorm migration:run -d ./dist/config/typeorm.config.js"
   },
   "lint-staged": {
     "*.ts": [

@@ -1,4 +1,5 @@
 export const ColorsTasks = [
+  '#D9D9D9',
   '#BAE2FF',
   '#B9FFDD',
   '#FFE8AC',

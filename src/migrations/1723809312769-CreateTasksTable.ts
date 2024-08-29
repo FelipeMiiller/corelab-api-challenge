@@ -12,10 +12,7 @@ export class CreateTasksTable1723809312769 implements MigrationInterface {
             name: 'title',
             columnNames: ['title'],
           },
-          {
-            name: 'isFavorite',
-            columnNames: ['isFavorite'],
-          },
+         
         ],
 
         columns: [
@@ -61,6 +58,7 @@ export class CreateTasksTable1723809312769 implements MigrationInterface {
             name: 'updatedAt',
             type: 'timestamp',
             default: 'now()',
+            onUpdate: 'now()',
             isNullable: true,
           },
         ],
