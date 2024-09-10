@@ -1,7 +1,7 @@
 import { TaskEntity } from 'src/modules/tasks/domain/entities/tasks.entity';
 import { TaskModel } from 'src/modules/tasks/domain/models/tasks.model';
 
-export interface TasksRepository {
+export interface LogsRepository {
   create(task: TaskEntity): Promise<TaskModel>;
   update(id: string, task: Partial<TaskEntity>): Promise<TaskModel>;
   delete(id: string): Promise<void>;
@@ -10,4 +10,4 @@ export interface TasksRepository {
   findMany(pagination?: Partial<{ page: number; limit: number }>, title?: string): Promise<TaskModel[]>;
 }
 
-export const USERS_REPOSITORY_TOKEN = 'users-repository-token';
+export const LOGS_REPOSITORY_TOKEN = 'logs-repository-token';

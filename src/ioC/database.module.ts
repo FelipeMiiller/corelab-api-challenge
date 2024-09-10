@@ -2,7 +2,7 @@
 https://docs.nestjs.com/modules
 */
 
-import { ConfigService} from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { Module } from '@nestjs/common';

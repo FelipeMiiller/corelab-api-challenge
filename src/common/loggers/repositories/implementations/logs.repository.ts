@@ -9,7 +9,7 @@ import {
 } from 'src/modules/tasks/domain/repositories/implementations/tasks.repository.interface';
 import { ILike, Repository } from 'typeorm';
 
-export class TasksTypeOrmRepository implements TasksRepository {
+export class LogsRepository implements TasksRepository {
   constructor(
     @Inject(USERS_REPOSITORY_TOKEN)
     private readonly tasksRepository: Repository<TaskModel>,

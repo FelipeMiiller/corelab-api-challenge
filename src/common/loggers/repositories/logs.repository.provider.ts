@@ -1,9 +1,9 @@
 import { Repository } from 'typeorm';
-import { TaskModel } from '../models/tasks.model';
+import { TaskModel } from '../models/logs.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable, Provider } from '@nestjs/common';
-import { TasksTypeOrmRepository } from './implementations/tasks.repository';
-import { USERS_REPOSITORY_TOKEN } from './implementations/tasks.repository.interface';
+import { TasksTypeOrmRepository } from './implementations/logs.repository';
+import { USERS_REPOSITORY_TOKEN } from './implementations/logs.repository.interface';
 
 export function provideTasksRepository(): Provider[] {
   return [

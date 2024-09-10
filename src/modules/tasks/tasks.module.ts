@@ -9,9 +9,10 @@ import { TasksService } from './domain/tasks.service';
 import { provideTasksRepository } from './domain/repositories/tasks.repository.provider';
 import { TaskModel } from './domain/models/tasks.model';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LoggerModule } from 'src/common/loggers/logger.module';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([TaskModel])],
+  imports: [LoggerModule, TypeOrmModule.forFeature([TaskModel])],
   controllers: [TasksController],
   providers: [TasksService, ...provideTasksRepository(), TypeOrmModule],
 })

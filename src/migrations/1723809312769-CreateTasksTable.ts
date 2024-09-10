@@ -12,7 +12,6 @@ export class CreateTasksTable1723809312769 implements MigrationInterface {
             name: 'title',
             columnNames: ['title'],
           },
-         
         ],
 
         columns: [

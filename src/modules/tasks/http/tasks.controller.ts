@@ -14,7 +14,7 @@ export class TasksController {
   constructor(private readonly tasksService: TasksService) {}
 
   @Post()
-  @ApiBody({ type: [CreateTasksDto] })
+  @ApiBody({ type: CreateTasksDto })
   async create(@Body() taskDto: CreateTasksDto) {
     return this.tasksService.create(taskDto);
   }
@@ -24,24 +24,18 @@ export class TasksController {
     return this.tasksService.findById(id);
   }
 
-
   @Get()
   @ApiQuery({ name: 'page', required: false, type: Number, example: 1 })
   @ApiQuery({ name: 'limit', required: false, type: Number, example: 10 })
   @ApiQuery({ name: 'title', required: false, type: String })
-  async findLots(
-    @Query('page') page = 1,
-    @Query('limit') limit = 10, 
-    @Query('title') title?: string 
-  ) {
-   
-      return this.tasksService.findLots({ page, limit},title);
-    
+  async findMany(@Query('page') page = 1, @Query('limit') limit = 10, @Query('title') title?: string) {
+    return this.tasksService.findMany({ page, limit }, title);
   }
 
   @Patch(':id')
-  @ApiBody({ type: [UpdateTasksDto] })
-  async update(@Param('id') id: string,  @Body()taskUpdateDto: UpdateTasksDto) {
+  @ApiBody({ type: UpdateTasksDto })
+  async update(@Param('id') id: string, @Body() taskUpdateDto: UpdateTasksDto) {
+    
     return this.tasksService.update(id, taskUpdateDto);
   }
 
@@ -49,6 +43,4 @@ export class TasksController {
   async delete(@Param('id') id: string) {
     return this.tasksService.delete(id);
   }
-  
-
 }

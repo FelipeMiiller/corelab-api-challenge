@@ -1,7 +1,7 @@
 import { registerAs } from '@nestjs/config';
 import { CreateTasksTable1723809312769 } from 'src/migrations/1723809312769-CreateTasksTable';
 import { TaskModel } from 'src/modules/tasks/domain/models/tasks.model';
-import { DataSource, DataSourceOptions} from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
 import { config as dotenvConfig } from 'dotenv';
 import { pathEnv } from './app.config';
 dotenvConfig({ path: pathEnv });
